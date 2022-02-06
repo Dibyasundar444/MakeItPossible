@@ -15,7 +15,7 @@ body {
 }
 
 span {
-  font-size: 25px
+  font-size: 20px
 }
 
 .dark-mode {
@@ -27,7 +27,7 @@ span {
 
 .light-mode {
   background-color: #fff;
-  color: #333;
+  color: #000;
   height: 100%;
   transition: background-color 0.25s ease-in-out;
 }
@@ -37,14 +37,6 @@ span {
   justify-content: center;
   align-items: center
 }
-
-/* .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 14px;
-} */
-
 .switch input { 
   opacity: 0;
   width: 0;

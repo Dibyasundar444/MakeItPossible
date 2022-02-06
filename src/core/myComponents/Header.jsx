@@ -1,5 +1,6 @@
 import React from "react";
 import Toggle from "./Toggle";
+
 export default function Header(props) {
   return (
     <nav
@@ -30,22 +31,25 @@ export default function Header(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <a className="nav-link active" aria-current="page" href="/login">
                 <div
                   style={{
-                    backgroundColor: "#0e274a",
                     borderRadius: 10,
                     padding: 5,
+                    maxWidth: "200px",
                     boxShadow: `1px 3px 1px ${
                       props.darkMode ? "#c96dfd" : "#9E9E9E"
                     }`,
                   }}
+                  className="d-flex align-items-start"
                 >
-                  <text
-                    style={{ marginLeft: 10, marginRight: 10, color: "#fff" }}
-                  >
-                    Hi, user
-                  </text>
+                  {/* <div style={{ height: 30, width: 30, borderRadius: 15,backgroundColor:"gray"}}> */}
+                    <img
+                      src={require("../../assets/user.png")}
+                      style={{ height: 20, width: 20, borderRadius: 10 }}
+                    />
+                  {/* </div> */}
+                  <h6 className="px-2">user</h6>
                 </div>
               </a>
             </li>
@@ -55,12 +59,14 @@ export default function Header(props) {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="search questions..."
                 aria-label="Search"
+                value={props.searchTerm}
+                onChange={(e) => props.setSearchTerm(e.target.value)}
               />
-              <button className="btn btn-outline-success" type="submit">
+              {/* <button className="btn btn-outline-success" type="submit">
                 Search
-              </button>
+              </button> */}
             </form>
             <div className="d-flex">
               <Toggle
